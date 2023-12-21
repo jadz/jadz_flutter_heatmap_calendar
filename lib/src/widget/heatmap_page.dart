@@ -82,6 +82,8 @@ class HeatMapPage extends StatelessWidget {
 
   final bool? showText;
 
+  final bool? showWeekText;
+
   /// Which day the week should start?
   /// weekStartsWith = 1 for Monday, ..., weekStartsWith = 7 for Sunday.
   /// Default to 7 (the week starts wih Sunday).
@@ -103,6 +105,7 @@ class HeatMapPage extends StatelessWidget {
     this.onClick,
     this.margin,
     this.showText,
+    this.showWeekText,
     this.weekStartsWith = 7,
   })  : _dateDifferent = endDate.difference(startDate).inDays,
         maxValue = DatasetsUtil.getMaxValue(datasets),
@@ -176,13 +179,14 @@ class HeatMapPage extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         // Show week labels to left side of heatmap.
-        HeatMapWeekText(
-          margin: margin,
-          fontSize: fontSize,
-          size: size,
-          fontColor: labelColor,
-          weekDayLabels: _localizedWeekDayLabels,
-        ),
+        if (showWeekText ?? true)
+          HeatMapWeekText(
+            margin: margin,
+            fontSize: fontSize,
+            size: size,
+            fontColor: labelColor,
+            weekDayLabels: _localizedWeekDayLabels,
+          ),
         Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
