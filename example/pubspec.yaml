@@ -31,7 +31,7 @@ dependencies:
     sdk: flutter
   flutter_localizations:
     sdk: flutter
-  flutter_heatmap_calendar:
+  jadz_flutter_heatmap_calendar:
     path: ../
 
   # The following adds the Cupertino Icons font to your application.

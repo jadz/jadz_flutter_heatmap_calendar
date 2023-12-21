@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter_heatmap_calendar/flutter_heatmap_calendar.dart';
+import 'package:jadz_flutter_heatmap_calendar/jadz_flutter_heatmap_calendar.dart';
 
 class HeatMapExample extends StatefulWidget {
   const HeatMapExample({Key? key}) : super(key: key);

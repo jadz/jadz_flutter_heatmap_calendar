@@ -1,4 +1,4 @@
-# Flutter Heatmap Calendar
+# Jadz Flutter Heatmap Calendar
 
 Flutter Heatmap Calendar inspired by github contribution chart.
 
@@ -12,7 +12,7 @@ Flutter Heatmap Calendar provides traditional contribution chart called `HeatMap
 ### Depend on it.
 
 ```
-flutter pub add flutter_heatmap_calendar
+flutter pub add jadz_flutter_heatmap_calendar
 ```
 
 **or**
@@ -21,7 +21,7 @@ Add below line to your personal package's `pubspec.yaml`.
 
 ```yaml
 dependencies:
-  flutter_heatmap_calendar: ^1.0.5
+  jadz_flutter_heatmap_calendar: ^1.0.0
 ```
 
 And run `flutter pub get` to install.
@@ -29,7 +29,7 @@ And run `flutter pub get` to install.
 ### Import it.
 
 ```dart
-import 'package:flutter_heatmap_calendar/flutter_heatmap_calendar.dart';
+import 'package:jadz_flutter_heatmap_calendar/jadz_flutter_heatmap_calendar.dart';
 ```
 
 ## Props
@@ -45,6 +45,7 @@ import 'package:flutter_heatmap_calendar/flutter_heatmap_calendar.dart';
 |colorsets|`Map<int, Color>`|required|Sets of color values for its thresholds key value.<br>At least one Color is required.<br>Be aware that only first color will be used if `ColorMode` is `ColorMode.opacity`.|
 |defaultColor|`Color?`|![#F8F9FA](https://via.placeholder.com/15/F8F9FA/000000?text=+) `Color(0xFFF8F9FA)`|Default color of every block.|
 |textColor|`Color?`|![#8A8A8A](https://via.placeholder.com/15/8A8A8A/000000?text=+) `Color(0xFF8A8A8A)`|Color value of every text.|
+|labelColor|`Color?`||The text color value for labels (months & week days).|
 |colorMode|`ColorMode`|`ColorMode.opacity`|`ColorMode.opacity` requires just one colorsets value and changes color dynamically based on hightest value of `datasets`.<br>`ColorMode.color` changes colors based on `colorsets` thresholds key value.|
 |size|`double?`|`20`|The size of every block.|
 |fontSize|`double?`|`null`|The size of every text.|
@@ -57,6 +58,7 @@ import 'package:flutter_heatmap_calendar/flutter_heatmap_calendar.dart';
 |colorTipHelper|`List<Widget?>?`|`null`|Widgets which are shown at left and right side of `colorTip`.<br>First value is the left side widget and second value is the right side widget.<br>Give null value makes default 'less' and 'more' text.|
 |colorTipCount|`int?`|`7`|Length of `colorTip` block.|
 |colorTipSize|`double?`|`10`|The size of `colorTip`.|
+|weekStartsWith|`int?`|`7`|Which day the week should start? weekStartsWith = 1 for Monday, ..., weekStartsWith = 7 for Sunday. Default to 7 (the week starts wih Sunday).|
 
 ### HeatMapCalendar
 
@@ -88,7 +90,7 @@ import 'package:flutter_heatmap_calendar/flutter_heatmap_calendar.dart';
 ### HeatMap
 
 ```dart
-import 'package:flutter_heatmap_calendar/flutter_heatmap_calendar.dart';
+import 'package:jadz_flutter_heatmap_calendar/jadz_flutter_heatmap_calendar.dart';
 ...
 HeatMap(
   datasets: {
@@ -119,7 +121,7 @@ HeatMap(
 ### HeatMapCalendar
 
 ```dart
-import 'package:flutter_heatmap_calendar/flutter_heatmap_calendar.dart';
+import 'package:jadz_flutter_heatmap_calendar/jadz_flutter_heatmap_calendar.dart';
 ...
 HeatMapCalendar(
   defaultColor: Colors.white,
@@ -147,12 +149,20 @@ HeatMapCalendar(
 );
 ```
 
+## Credits
+
+As the original package no longer seems to be maintained, this is a fork of the following repo:
+- https://github.com/Eimji/flutter_heatmap_calendar
+
+The original repo is:
+- https://github.com/devappmin/flutter_heatmap_calendar
+
 ## License
 
 ```
 MIT License
 
-Copyright (c) 2021 Kim Seung Hwan
+Copyright (c) 2023 Jared Mooring
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
